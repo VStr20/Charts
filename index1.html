@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.js Bar Chart</title>
+    <!--Chart.js JS CDN--> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script> 
+  </head>
+  <body>
+    
+    <div id="chart1"> 
+      <h2>Graph 1</h2>
+      <h3>Numbers of applications received, accepted, pending and rejected on a particular day</h4> 
+    <div id="display1">
+      <p>  
+        <ul id="day">Day1
+          <li>Total = 86</li>
+          <li>Accepted = 70</li>
+          <li>Pending = 10</li>
+          <li>Rejected = 6</li>
+        </ul>
+      </p>
+      <p> 
+        <ul id="day">Day2
+          <li>Total = 114</li>
+          <li>Accepted = 90</li>
+          <li>Pending = 21</li>
+          <li>Rejected = 3</li>
+        </ul>
+      </p>
+      <p> 
+        <ul id="day">Day3
+          <li>Total = 106</li>
+          <li>Accepted = 44</li>
+          <li>Pending = 60</li>
+          <li>Rejected = 2</li>
+        </ul>
+      </p>
+      <p> 
+        <ul id="day">Day4
+          <li>Total = 106</li>
+          <li>Accepted = 60</li>
+          <li>Pending = 44</li>
+          <li>Rejected = 2</li>
+        </ul>
+      </p>
+      <p> 
+        <ul id="day">Day5
+          <li>Total = 107</li>
+          <li>Accepted = 83</li>
+          <li>Pending = 17</li>
+          <li>Rejected = 7</li>
+        </ul>
+      </p>
+      <p> 
+        <ul id="day">Day6
+          <li>Total = 111</li>
+          <li>Accepted = 90</li>
+          <li>Pending = 21</li>
+          <li>Rejected = 0</li>
+        </ul>
+      </p>
+      <p> 
+        <ul id="day">Day7
+          <li>Total = 133</li>
+          <li>Accepted = 100</li>
+          <li>Pending = 17</li>
+          <li>Rejected = 16</li>
+        </ul>
+      </p>
+    </div>
+      <div id="canvas1">
+        <h2 id="heading">Bar Graph</h2>
+        <canvas id="myChart1" ></canvas>
+      </div>
+    </div> 
+    <div id="chart2">
+      <h2>Graph 2</h2>
+      <h3>Data for applications accepted, pending and rejected.</h3>
+      <p>
+        <ul>
+          <li>Accepted = 70</li>
+          <li>Pending = 10</li>
+          <li>Rejected = 6</li>
+        </ul>
+      </p>
+      <div id="canvas2">
+        <h2 id="heading">Doughnut Chart</h2>
+        <canvas id="myChart2" width="600px" height="600px"></canvas>
+      </div>
+    </div>   
+    <div id="chart3"> 
+      <h2>Graph 3</h2>
+      <h3>Data for applications accepted, pending and rejected.</h3>
+      <p>
+        <ul>
+          <li>Accepted = 70</li>
+          <li>Pending = 10</li>
+          <li>Rejected = 6</li>
+        </ul>
+      </p>
+      <div id="canvas2">
+        <h2 id="heading">Pie Chart</h2>
+        <canvas id="myChart3" width="400px" height="400px"></canvas>
+      </div>
+    </div>
+    <div id="chart4"> 
+      <h2>Graph 4</h2>
+    <div id="display1">
+      <p>
+        <ul id="day1">
+          <li>x = 17</li>
+          <li>y = 3</li>
+          <li>radius = 36</li>
+        </ul>
+        <ul id="day1">
+          <li>x = 10</li>
+          <li>y = 1.6</li>
+          <li>radius = 20</li>
+        </ul>
+        <ul id="day1">
+          <li>x = 4.8</li>
+          <li>y = 3.2</li>
+          <li>radius = 30</li>
+        </ul>
+        <ul id="day1">
+          <li>x = 14</li>
+          <li>y = 0</li>
+          <li>radius = 9</li>
+        </ul>
+      </p>
+    </div>
+      <div id="canvas2">
+        <h2 id="heading">Bubble Chart</h2>
+        <canvas id="myChart4" width="1400px" height="600px"></canvas>
+      </div>
+    </div>    
+    <div id="chart5">
+      <h2>Graph 5</h2>
+      <div id="display1">
+        <p>  
+          <ul id="day">Day1
+            <li>Total = 86</li>
+            <li>Accepted = 70</li>
+            <li>Pending = 10</li>
+            <li>Rejected = 6</li>
+          </ul>
+        </p>
+        <p> 
+          <ul id="day">Day2
+            <li>Total = 114</li>
+            <li>Accepted = 90</li>
+            <li>Pending = 21</li>
+            <li>Rejected = 3</li>
+          </ul>
+        </p>
+        <p> 
+          <ul id="day">Day3
+            <li>Total = 106</li>
+            <li>Accepted = 44</li>
+            <li>Pending = 60</li>
+            <li>Rejected = 2</li>
+          </ul>
+        </p>
+        <p> 
+          <ul id="day">Day4
+            <li>Total = 106</li>
+            <li>Accepted = 60</li>
+            <li>Pending = 44</li>
+            <li>Rejected = 2</li>
+          </ul>
+        </p>
+        <p> 
+          <ul id="day">Day5
+            <li>Total = 107</li>
+            <li>Accepted = 83</li>
+            <li>Pending = 17</li>
+            <li>Rejected = 7</li>
+          </ul>
+        </p>
+        <p> 
+          <ul id="day">Day6
+            <li>Total = 111</li>
+            <li>Accepted = 90</li>
+            <li>Pending = 21</li>
+            <li>Rejected = 0</li>
+          </ul>
+        </p>
+        <p> 
+          <ul id="day">Day7
+            <li>Total = 133</li>
+            <li>Accepted = 100</li>
+            <li>Pending = 17</li>
+            <li>Rejected = 16</li>
+          </ul>
+        </p>
+      </div> 
+      <div id="canvas2">
+        <h2 id="heading">Mixed Chart</h2>
+        <canvas id="myChart5" width="1400px" height="600px"></canvas>
+      </div>
+    </div>    
+  </body>
+</html>
