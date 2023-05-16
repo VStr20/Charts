@@ -1,0 +1,151 @@
+*{
+  font-family: 'Roboto Slab', serif;
+  /* background-image: linear-gradient(to left top, #d64c9a, #ce57ad, #c462be, #b66dcd, #a678da, #858cef, #599efb, #00aeff, #00c7ff, #00ddf1, #00eecd, #5ffba0); */
+
+  /* background-color: black; */
+  /* color: white; */
+}
+#chart1{
+  background-color: rgb(255, 255, 255);
+  border: 10 px solid rgb(255, 255, 255);
+  border-radius: 24 px;
+  display: flex;
+  flex-direction: column;
+  padding: 24 px;
+  margin: 24 px;
+  /* width: 1650 px;
+  height: 650 px; */
+}
+#chart2{
+  background-color: rgb(255, 255, 255);
+  border: 10 px solid black;
+  border-radius: 24 px;
+  display: flex;
+  flex-direction: column;
+  padding: 24 px;
+  margin: 24 px;
+}
+#chart3{
+  /* background-color: rgb(255, 255, 255); */
+  border: 10 px solid black;
+  border-radius: 24 px;
+  display: flex;
+  flex-direction: column;
+  padding: 24 px;
+  margin: 24 px;
+}
+#chart4{
+  /* background-color: rgb(255, 255, 255); */
+  border: 10 px solid black;
+  border-radius: 24 px;
+  display: flex;
+  flex-direction: column;
+  padding: 24 px;
+  margin: 24 px;
+}
+#chart5{
+
+  /* background-color: rgb(255, 255, 255); */
+  border: 10 px solid black;
+  border-radius: 24 px;
+  display: flex;
+  flex-direction: column;
+  padding: 24 px;
+  margin: 24 px;
+}
+#myChart1{
+  /* background-image: linear-gradient(to left top, #ffffff, #ebe7fb, #d6d0f7, #c1b9f3, #aba3ee, #8ea6f7, #65aafd, #00aeff, #00c7ff, #00ddf1, #00eecd, #5ffba0); */
+  background-image: linear-gradient(to left top, #ffffff, #efedfc, #e0dbf8, #cfcaf5, #bfb9f1, #aabbf8, #90bdfd, #6ec0ff, #46d3ff, #43e4f2, #6df1dd, #a0fbc6);
+  border: 10 px solid black;
+  border-radius: 24 px;
+  padding: 24 px;
+  margin: 24 px;
+}
+#myChart2{
+  background-image: linear-gradient(to left top, #bee3ec, #abdaee, #9cd0f2, #96c4f4, #98b7f4, #85bbfa, #6dc0fd, #4ec4ff, #00d8f4, #3ee7d6, #8df0b0, #d3f392);
+  /* background-image: linear-gradient(to left top, #ffffff, #efedfc, #e0dbf8, #cfcaf5, #bfb9f1, #aabbf8, #90bdfd, #6ec0ff, #46d3ff, #43e4f2, #6df1dd, #a0fbc6); */
+  border: 10 px solid black;
+  border-radius: 24 px;
+  width: 400px;
+  height: 400px;
+}
+#myChart3{
+  background-image: linear-gradient(to left top, #ffffff, #efedfc, #e0dbf8, #cfcaf5, #bfb9f1, #aabbf8, #90bdfd, #6ec0ff, #46d3ff, #43e4f2, #6df1dd, #a0fbc6);
+  border: 10 px solid black;
+  border-radius: 24 px;
+  width: 400px;
+  height: 400px;
+}
+#myChart4{
+  background-image: linear-gradient(to left top, #ffffff, #efedfc, #e0dbf8, #cfcaf5, #bfb9f1, #aabbf8, #90bdfd, #6ec0ff, #46d3ff, #43e4f2, #6df1dd, #a0fbc6);
+  border: 10 px solid black;
+  border-radius: 24 px;
+  padding: 24 px;
+  margin: 24 px;
+}
+#myChart5{
+  background-image: linear-gradient(to left top, #bee3ec, #aeddf4, #a8d4fd, #b0c9ff, #c4baff, #dfb0ef, #f3a8da, #ffa2c1, #ffaca4, #ffc18b, #fada81, #d3f392);
+  border: 10 px solid black;
+  border-radius: 24 px;
+  padding: 24 px;
+  margin: 24 px;
+}
+#canvas1{
+  display: flex;
+  flex-direction: column;
+}
+#canvas2{
+  display: flex;
+  flex-direction: column;
+}
+#display1{
+  display: flex;
+  flex-direction: row;
+  /* display: grid; */
+  /* grid-template-rows: 30px auto 20px 50px; */
+  /* grid-gap: 2 rem; */
+}
+@media(max-width: 960px){
+  #display1{
+    display: flex;
+    flex-direction: column;
+  }
+}
+#day1{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  /* margin: 16px; */
+  padding: 12px 36px;
+}
+@media(max-width: 960px){
+  #day1{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  /* margin: 16px; */
+  /* padding: 12px 36px; */
+  margin: 0px;
+}
+}
+#day{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  /* margin: 16px; */
+  padding: 12px 36px;
+}
+@media(max-width: 960px){
+  #day{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  /* margin: 16px; */
+  /* padding: 12px 36px; */
+  margin: -16px;
+}
+}
+#heading{
+  text-align: center;
+  justify-content: center;
+}
