@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.js Bar Chart</title>
+    <!--Chart.js JS CDN--> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script> 
+  </head>
+  <style>
+    *{
+      font-family: 'Roboto Slab', serif;
+      /* background-image: linear-gradient(to left top, #d64c9a, #ce57ad, #c462be, #b66dcd, #a678da, #858cef, #599efb, #00aeff, #00c7ff, #00ddf1, #00eecd, #5ffba0); */
+      
+      /* background-color: black; */
+      /* color: white; */
+    }
+    #chart1{
+      background-color: rgb(255, 255, 255);
+      border: 10 px solid rgb(255, 255, 255);
+      border-radius: 24 px;
+      display: flex;
+      flex-direction: column;
+      padding: 24 px;
+      margin: 24 px;
+      /* width: 1650 px;
+      height: 650 px; */
+    }
+    #chart2{
+      background-color: rgb(255, 255, 255);
+      border: 10 px solid black;
+      border-radius: 24 px;
+      display: flex;
+      flex-direction: column;
+      padding: 24 px;
+      margin: 24 px;
+    }
+    #chart3{
+      /* background-color: rgb(255, 255, 255); */
+      border: 10 px solid black;
+      border-radius: 24 px;
+      display: flex;
+      flex-direction: column;
+      padding: 24 px;
+      margin: 24 px;
+    }
+    #chart4{
+      /* background-color: rgb(255, 255, 255); */
+      border: 10 px solid black;
+      border-radius: 24 px;
+      display: flex;
+      flex-direction: column;
+      padding: 24 px;
+      margin: 24 px;
+    }
+    #chart5{
+
+      /* background-color: rgb(255, 255, 255); */
+      border: 10 px solid black;
+      border-radius: 24 px;
+      display: flex;
+      flex-direction: column;
+      padding: 24 px;
+      margin: 24 px;
+    }
+    #myChart1{
+      /* background-image: linear-gradient(to left top, #ffffff, #ebe7fb, #d6d0f7, #c1b9f3, #aba3ee, #8ea6f7, #65aafd, #00aeff, #00c7ff, #00ddf1, #00eecd, #5ffba0); */
+      background-image: linear-gradient(to left top, #ffffff, #efedfc, #e0dbf8, #cfcaf5, #bfb9f1, #aabbf8, #90bdfd, #6ec0ff, #46d3ff, #43e4f2, #6df1dd, #a0fbc6);
+      border: 10 px solid black;
+      border-radius: 24 px;
+      padding: 24 px;
+      margin: 24 px;
+    }
+    #myChart2{
+      background-image: linear-gradient(to left top, #bee3ec, #abdaee, #9cd0f2, #96c4f4, #98b7f4, #85bbfa, #6dc0fd, #4ec4ff, #00d8f4, #3ee7d6, #8df0b0, #d3f392);
+      /* background-image: linear-gradient(to left top, #ffffff, #efedfc, #e0dbf8, #cfcaf5, #bfb9f1, #aabbf8, #90bdfd, #6ec0ff, #46d3ff, #43e4f2, #6df1dd, #a0fbc6); */
+      border: 10 px solid black;
+      border-radius: 24 px;
+      width: 400px;
+      height: 400px;
+    }
+    #myChart3{
+      background-image: linear-gradient(to left top, #ffffff, #efedfc, #e0dbf8, #cfcaf5, #bfb9f1, #aabbf8, #90bdfd, #6ec0ff, #46d3ff, #43e4f2, #6df1dd, #a0fbc6);
+      border: 10 px solid black;
+      border-radius: 24 px;
+      width: 400px;
+      height: 400px;
+    }
+    #myChart4{
+      background-image: linear-gradient(to left top, #ffffff, #efedfc, #e0dbf8, #cfcaf5, #bfb9f1, #aabbf8, #90bdfd, #6ec0ff, #46d3ff, #43e4f2, #6df1dd, #a0fbc6);
+      border: 10 px solid black;
+      border-radius: 24 px;
+      padding: 24 px;
+      margin: 24 px;
+    }
+    #myChart5{
+      background-image: linear-gradient(to left top, #bee3ec, #aeddf4, #a8d4fd, #b0c9ff, #c4baff, #dfb0ef, #f3a8da, #ffa2c1, #ffaca4, #ffc18b, #fada81, #d3f392);
+      border: 10 px solid black;
+      border-radius: 24 px;
+      padding: 24 px;
+      margin: 24 px;
+    }
+    #canvas1{
+      display: flex;
+      flex-direction: column;
+    }
+    #canvas2{
+      display: flex;
+      flex-direction: column;
+    }
+    #display1{
+      display: flex;
+      flex-direction: row;
+      /* display: grid; */
+      /* grid-template-rows: 30px auto 20px 50px; */
+      /* grid-gap: 2 rem; */
+    }
+    @media(max-width: 960px){
+      #display1{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    #day1{
+      display: flex;
+      flex-direction: column;
+      border: 2px solid black;
+      /* margin: 16px; */
+      padding: 12px 36px;
+    }
+    @media(max-width: 960px){
+      #day1{
+      display: flex;
+      flex-direction: column;
+      border: 2px solid black;
+      /* margin: 16px; */
+      /* padding: 12px 36px; */
+      margin: 0px;
+    }
+    }
+    #day{
+      display: flex;
+      flex-direction: column;
+      border: 2px solid black;
+      /* margin: 16px; */
+      padding: 12px 36px;
+    }
+    @media(max-width: 960px){
+      #day{
+      display: flex;
+      flex-direction: column;
+      border: 2px solid black;
+      /* margin: 16px; */
+      /* padding: 12px 36px; */
+      margin: -16px;
+    }
+    }
+    #heading{
+      text-align: center;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    
+    <div id="chart1"> 
+      <h2>Graph 1</h2>
+      <h3>Numbers of applications received, accepted, pending and rejected on a particular day</h4> 
+    <div id="display1">
+      <p>  
+        <ul id="day">Day1
+          <li>Total = 86</li>
+          <li>Accepted = 70</li>
+          <li>Pending = 10</li>
+          <li>Rejected = 6</li>
+        </ul>
+      </p>
+      <p> 
+        <ul id="day">Day2
+          <li>Total = 114</li>
+          <li>Accepted = 90</li>
+          <li>Pending = 21</li>
+          <li>Rejected = 3</li>
+        </ul>
+      </p>
+      <p> 
+        <ul id="day">Day3
+          <li>Total = 106</li>
+          <li>Accepted = 44</li>
+          <li>Pending = 60</li>
+          <li>Rejected = 2</li>
+        </ul>
+      </p>
+      <p> 
+        <ul id="day">Day4
+          <li>Total = 106</li>
+          <li>Accepted = 60</li>
+          <li>Pending = 44</li>
+          <li>Rejected = 2</li>
+        </ul>
+      </p>
+      <p> 
+        <ul id="day">Day5
+          <li>Total = 107</li>
+          <li>Accepted = 83</li>
+          <li>Pending = 17</li>
+          <li>Rejected = 7</li>
+        </ul>
+      </p>
+      <p> 
+        <ul id="day">Day6
+          <li>Total = 111</li>
+          <li>Accepted = 90</li>
+          <li>Pending = 21</li>
+          <li>Rejected = 0</li>
+        </ul>
+      </p>
+      <p> 
+        <ul id="day">Day7
+          <li>Total = 133</li>
+          <li>Accepted = 100</li>
+          <li>Pending = 17</li>
+          <li>Rejected = 16</li>
+        </ul>
+      </p>
+    </div>
+      <div id="canvas1">
+        <h2 id="heading">Bar Graph</h2>
+        <canvas id="myChart1" ></canvas>
+      </div>
+    </div> 
+    <div id="chart2">
+      <h2>Graph 2</h2>
+      <h3>Data for applications accepted, pending and rejected.</h3>
+      <p>
+        <ul>
+          <li>Accepted = 70</li>
+          <li>Pending = 10</li>
+          <li>Rejected = 6</li>
+        </ul>
+      </p>
+      <div id="canvas2">
+        <h2 id="heading">Doughnut Chart</h2>
+        <canvas id="myChart2" width="600px" height="600px"></canvas>
+      </div>
+    </div>   
+    <div id="chart3"> 
+      <h2>Graph 3</h2>
+      <h3>Data for applications accepted, pending and rejected.</h3>
+      <p>
+        <ul>
+          <li>Accepted = 70</li>
+          <li>Pending = 10</li>
+          <li>Rejected = 6</li>
+        </ul>
+      </p>
+      <div id="canvas2">
+        <h2 id="heading">Pie Chart</h2>
+        <canvas id="myChart3" width="400px" height="400px"></canvas>
+      </div>
+    </div>
+    <div id="chart4"> 
+      <h2>Graph 4</h2>
+    <div id="display1">
+      <p>
+        <ul id="day1">
+          <li>x = 17</li>
+          <li>y = 3</li>
+          <li>radius = 36</li>
+        </ul>
+        <ul id="day1">
+          <li>x = 10</li>
+          <li>y = 1.6</li>
+          <li>radius = 20</li>
+        </ul>
+        <ul id="day1">
+          <li>x = 4.8</li>
+          <li>y = 3.2</li>
+          <li>radius = 30</li>
+        </ul>
+        <ul id="day1">
+          <li>x = 14</li>
+          <li>y = 0</li>
+          <li>radius = 9</li>
+        </ul>
+      </p>
+    </div>
+      <div id="canvas2">
+        <h2 id="heading">Bubble Chart</h2>
+        <canvas id="myChart4" width="1400px" height="600px"></canvas>
+      </div>
+    </div>    
+    <div id="chart5">
+      <h2>Graph 5</h2>
+      <div id="display1">
+        <p>  
+          <ul id="day">Day1
+            <li>Total = 86</li>
+            <li>Accepted = 70</li>
+            <li>Pending = 10</li>
+            <li>Rejected = 6</li>
+          </ul>
+        </p>
+        <p> 
+          <ul id="day">Day2
+            <li>Total = 114</li>
+            <li>Accepted = 90</li>
+            <li>Pending = 21</li>
+            <li>Rejected = 3</li>
+          </ul>
+        </p>
+        <p> 
+          <ul id="day">Day3
+            <li>Total = 106</li>
+            <li>Accepted = 44</li>
+            <li>Pending = 60</li>
+            <li>Rejected = 2</li>
+          </ul>
+        </p>
+        <p> 
+          <ul id="day">Day4
+            <li>Total = 106</li>
+            <li>Accepted = 60</li>
+            <li>Pending = 44</li>
+            <li>Rejected = 2</li>
+          </ul>
+        </p>
+        <p> 
+          <ul id="day">Day5
+            <li>Total = 107</li>
+            <li>Accepted = 83</li>
+            <li>Pending = 17</li>
+            <li>Rejected = 7</li>
+          </ul>
+        </p>
+        <p> 
+          <ul id="day">Day6
+            <li>Total = 111</li>
+            <li>Accepted = 90</li>
+            <li>Pending = 21</li>
+            <li>Rejected = 0</li>
+          </ul>
+        </p>
+        <p> 
+          <ul id="day">Day7
+            <li>Total = 133</li>
+            <li>Accepted = 100</li>
+            <li>Pending = 17</li>
+            <li>Rejected = 16</li>
+          </ul>
+        </p>
+      </div> 
+      <div id="canvas2">
+        <h2 id="heading">Mixed Chart</h2>
+        <canvas id="myChart5" width="1400px" height="600px"></canvas>
+      </div>
+    </div>    
+  </body>
+  <script>
+      var ctx1 = document.getElementById('myChart1').getContext('2d');
+      var myChart1 = new Chart(ctx1, {
+          type: 'bar',
+          data: {
+            labels: ["Day1", "Day2","Day3","Day4","Day5","Day6","Day7",],
+            datasets: [{ 
+                data: [86,114,106,106,107,111,133],
+                label: "Total",
+                borderColor: "#3cba9f",
+                backgroundColor: "#3cba9f",
+                hoverBackgroundColor: "rgb(62, 200, 36, 0.6)",
+                borderWidth:2
+              }, { 
+                data: [70,90,44,60,83,90,100],
+                label: "Accepted",
+                borderColor: "#ffa500",
+                backgroundColor: "#ffa500",
+                borderWidth:2
+              }, { 
+                data: [10,21,60,44,17,21,17],
+                label: "Pending",
+                borderColor: "#c45850",
+                backgroundColor:"#c45850",
+                borderWidth:2
+              }, { 
+                data: [6,3,2,2,7,0,16],
+                label: "Rejected",
+                borderColor: "#3e95cd",
+                backgroundColor:"#3e95cd",
+                borderWidth:2
+              }
+            ]
+          },
+          options: {
+            plugins: {
+              title: {
+                display: true,
+                // text: 'Chart.js Bar Chart - Stacked'
+               },
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                stacked: true,
+              },
+              y: {
+                stacked: true
+              }
+            },
+          }
+        });
+      var ctx2 = document.getElementById('myChart2').getContext('2d');
+      var myChart2 = new Chart(ctx2, {
+          type: 'doughnut',
+          data: {
+            labels: ["Accepted","Pending", "Rejected"],
+            datasets: [{ 
+                data: [70,10,6],
+                borderColor:[
+                  "#3cba9f",
+                  "#ffa500",
+                  "#c45850",
+                ],
+                backgroundColor: [
+                  "#3cba9f",
+                  "#ffa500",
+                  "#c45850",
+                ],
+                borderWidth:2,
+              }]
+          },
+          options: {
+            plugins: {
+              title: {
+                display: true,
+                // text: 'Chart.js Bar Chart - Stacked'
+               },
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                stacked: true,
+              },
+              y: {
+                stacked: true
+              }
+            }
+          },
+
+      });
+      var ctx3 = document.getElementById('myChart3').getContext('2d');
+      var myChart3 = new Chart(ctx3, {
+          type: 'pie',
+          data: {
+            labels: ["Accepted","Pending", "Rejected"],
+            datasets: [{ 
+                data: [70,10,6],
+                borderColor:[
+                  "#3cba9f",
+                  "#ffa500",
+                  "#c45850",
+                ],
+                backgroundColor: [
+                  "#3cba9f",
+                  "#ffa500",
+                  "#c45850",
+                ],
+                borderWidth:2,
+              }]
+          },
+          options: {
+            plugins: {
+              title: {
+                display: true,
+                // text: 'Chart.js Bar Chart - Stacked'
+               },
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                stacked: true,
+              },
+              y: {
+                stacked: true
+              }
+            }
+          },
+      });
+      var ctx4 = document.getElementById('myChart4').getContext('2d');
+      var myChart4 = new Chart(ctx4, {
+          type: 'bubble',
+          data: {
+            datasets: [{ 
+                data: [
+                  {x: 17, y: 3, r:36},
+                ],
+                label: "Blue Team",
+                borderColor: "#3e95cd",
+                backgroundColor: "#3e95cd",
+                borderWidth:2,
+               
+              }, { 
+                data: [
+                  {x: 10, y: 1.6, r:20},
+                ],
+                label: "Green Team",
+                borderColor: "#3cba9f",
+                backgroundColor: "#3cba9f",
+                borderWidth:2,
+                
+              }, { 
+                data: [
+                {x: 4.8, y: 3.2, r:30},
+                ],
+                label: "Yellow Team",
+                borderColor: "#c45850",
+                backgroundColor:"#c45850",
+                borderWidth:2,
+                
+              }, { 
+                data: [
+                {x: 14, y: 0, r:9}
+                ],
+                label: "Red Team",
+                borderColor: "#ffa500",
+                backgroundColor:"#ffa500",
+                borderWidth:2,
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              xAxes: [{ 
+                scaleLabel: {
+                  display: true,
+                  labelString: '# of wins'
+                }
+              }],
+              yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: '# of games'
+                }
+              }],
+            }
+          },
+        });
+        var ctx5 = document.getElementById('myChart5').getContext('2d');
+      var myChart5 = new Chart(ctx5, {
+          type: 'bar',
+          data: {
+            labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            datasets: [{ 
+                data: [86,114,106,106,107,111,133],
+                label: "Total",
+                borderColor: "#3e95cd",
+                backgroundColor: "rgb(62,149,205)",
+                borderWidth:2,
+                type: 'line',
+                fill:false
+              }, { 
+                data: [70,90,44,60,83,90,100],
+                label: "Accepted",
+                borderColor: "#3cba9f",
+                backgroundColor: "#3cba9f",
+                borderWidth:2
+              }, { 
+                data: [10,21,60,44,17,21,17],
+                label: "Pending",
+                borderColor: "#ffa500",
+                backgroundColor:"#ffa500",
+                borderWidth:2,
+              }, { 
+                data: [6,3,2,2,7,0,16],
+                label: "Rejected",
+                borderColor: "#c45850",
+                backgroundColor:"#c45850",
+                borderWidth:2
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              xAxes: [{ 
+                scaleLabel: {
+                  display: true,
+                  // labelString: '# of wins'
+                }
+              }],
+              yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  // labelString: '# of games'
+                }
+              }],
+            }
+          },
+        });
+    </script>
+
+
+</html>
